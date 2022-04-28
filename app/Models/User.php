@@ -28,6 +28,13 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $guarded = [];
+
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
     protected $hidden = [
         'password',
         'remember_token',
@@ -41,4 +48,22 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+    * Get the menus for the user.
+    */
+
+    public function menus()
+    {
+        return $this->hasMany(Meun::class);
+    }
+
+    /**
+    * Get the order for the user.
+    */
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
