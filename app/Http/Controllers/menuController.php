@@ -18,6 +18,17 @@ class menuController extends Controller
         return view('menus.index', compact('menus'));
     }
 
+        /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function slider()
+    {
+        $menus = Menu::all();
+        return view('menus.slider', compact('menus'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *

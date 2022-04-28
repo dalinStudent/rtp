@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
 @section('content')
 <div class="container">
@@ -28,6 +28,9 @@
                     </div>
                  </div>
              @endforeach
+            @else
+            <h4>Oops, No Food Found !</h4>
+            @endif
          </div>
     </div>
 </div>

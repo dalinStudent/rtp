@@ -25,7 +25,7 @@ Route::get('/users-list', [UserController::class, 'index'])->name('users-list');
 Route::get('/orders-list', [OrderController::class, 'index'])->name('orders-list');
 Route::get('/menus-list', [MenuController::class, 'index'])->name('menus-list');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\MenuController::class, 'slider'])->name('home');
 
 Auth::routes();
 

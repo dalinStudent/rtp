@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">Menu Management</div>
                 <div class="card-body">
+                    <a class="btn btn-primary mb-2 btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#addModal"><i class="mdi mdi-plus" aria-hidden="true"></i> Add User</a>
                     <table id="table_id" class="table table-striped table-bordered nowrap" style="width: 100%">
                         <thead>
                             <tr>
@@ -16,10 +17,6 @@
                                 <th>Description</th>
                                 <th>Quanty</th>
                                 <th>Price</th>
-                                <th>Sub Total</th>
-                                <th>Total</th>
-                                <th>Shpping Status</th>
-                                <th>Payment Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -33,10 +30,6 @@
                                 <td>{{ $menu->desc }}</td>
                                 <td>{{ $menu->qty }}</td>
                                 <td>{{ $menu->price }}</td>
-                                <td>{{ $menu->sub_total }}</td>
-                                <td>{{ $menu->total }}</td>
-                                <td>{{ $menu->shpping_status }}</td>
-                                <td>{{ $menu->payment_status }}</td>
                                 <td>
                                     <a class="btn btn-warning btn-sm">Edit</a>
                                     <a class="btn btn-danger btn-sm">Delete</a>
@@ -49,6 +42,66 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addModal">Add New Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+            <div class="input-group mb-3">
+                <input type="text" 
+                    class="form-control" 
+                    aria-label="title" 
+                    placeholder="Enter food title..."
+                    aria-describedby="basic-addon1"
+                >
+            </div>
+            <div class="input-group mb-3">
+                <input type="number" 
+                    class="form-control" 
+                    aria-label="price" 
+                    placeholder="Enter food price..."
+                    aria-describedby="basic-addon1"
+                >
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" 
+                    class="form-control" 
+                    aria-label="quanty" 
+                    placeholder="Enter food quanty..."
+                    aria-describedby="basic-addon1"
+                >
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" 
+                    class="form-control" 
+                    aria-label="sub total" 
+                    placeholder="Enter food sub total..."
+                    aria-describedby="basic-addon1"
+                >
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" 
+                    class="form-control" 
+                    aria-label="total" 
+                    placeholder="Enter food total..."
+                    aria-describedby="basic-addon1"
+                >
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script lang="">

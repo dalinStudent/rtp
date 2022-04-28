@@ -19,6 +19,10 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('cheif_id');
             $table->foreign('cheif_id')->references('id')->on('cheifs');
+            $table->string('sub_total');
+            $table->string('total');
+            $table->boolean('shpping_status');
+            $table->boolean('payment_status');
             $table->boolean('status');
             $table->timestamps();
         });
