@@ -5,42 +5,43 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">User Management</div>
+                <div class="card-header">Order Management</div>
                 <div class="card-body">
                     <table id="table_id" class="table table-striped table-bordered nowrap" style="width: 100%">
                         <thead>
                             <tr>
-                                <th>User ID</th>
-                                <th>Email</th>
-                                <th>Password</th>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Cheif Name</th>
+                                <th>Status</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
-                                          
+                        @foreach ($orders as $order)
+                            
                         <tbody>
                             <tr>
-                                <td>001</td>
-                                <td>dalin@gmail</td>
-                                <td>password</td>
+                                <td>{{ $order->id }}</td>
+                                <th>{{ $order->user_id }}</th>
+                                <td>{{ $order->cheif_id }}</td>
+                                <td>{{ $order->status }}</td>
                                 <td>
                                     <a class="btn btn-warning">Edit</a>
                                     <a class="btn btn-danger">Delete</a>
                                 </td>
                             </tr>
                         </tbody>
+                        @endforeach
                     </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<br>
 
 <script lang="">
-$(document).ready(function() {
-    var table = $('#table_id').DataTable( {
-        fixedHeader: true
-    } );
+    $(document).ready(function() {
+    $('#table_id').DataTable();
 } );
 </script>
 @endsection

@@ -18,6 +18,13 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
+            $table->string('desc');
+            $table->string('qty');
+            $table->integer('price');
+            $table->string('sub_total');
+            $table->string('total');
+            $table->boolean('shpping_status');
+            $table->boolean('payment_status');
             $table->timestamps();
         });
     }

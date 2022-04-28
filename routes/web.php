@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\MenuController;
 use App\Http\Controllers\Auth\LoginController;
 
 /*
@@ -18,6 +21,9 @@ use App\Http\Controllers\Auth\LoginController;
 Route::get('/', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login');
 
 Auth::routes();
+Route::get('/users-list', [UserController::class, 'index'])->name('users-list');
+Route::get('/orders-list', [OrderController::class, 'index'])->name('orders-list');
+Route::get('/menus-list', [MenuController::class, 'index'])->name('menus-list');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
